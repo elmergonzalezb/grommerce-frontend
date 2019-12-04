@@ -36,6 +36,8 @@ interface Company {
   products: {
     nodes: [Product];
   };
+  website: string;
+  category: string;
 }
 
 interface Product {
@@ -62,7 +64,7 @@ const CompanyInfo: React.FC<ICompanyInfoProps> = props => {
       <div className="dashboard-wrapper">
         <div className="row">
           <div className="col-12">
-            <h1>{data.company.name}</h1>
+            <h1>{data!.company!.name}</h1>
             <nav
               className="pt-0 breadcrumb-container d-none d-sm-block d-lg-inline-block"
               aria-label="breadcrumb"
@@ -79,7 +81,7 @@ const CompanyInfo: React.FC<ICompanyInfoProps> = props => {
                   </a>
                 </li>
                 <li className="active breadcrumb-item">
-                  <span>{data.company.name}</span>
+                  <span>{data!.company!.name}</span>
                 </li>
               </ol>
             </nav>
@@ -113,8 +115,8 @@ const CompanyInfo: React.FC<ICompanyInfoProps> = props => {
                           </button>
                         </div>
                         <img
-                          src={data.company.image}
-                          alt={data.company.category}
+                          src={data!.company!.image}
+                          alt={data!.company!.category}
                           className="card-img-fluid card-img-top"
                         />
 
@@ -122,16 +124,16 @@ const CompanyInfo: React.FC<ICompanyInfoProps> = props => {
                           <p className="text-muted text-small mb-2">
                             <span>Description</span>
                           </p>
-                          <p className="mb-3">{data.company.description}</p>
+                          <p className="mb-3">{data!.company.description}</p>
                           <p className="text-muted text-small mb-2">
                             <span>Website</span>
                           </p>
                           <a
                             className="mb-3 text-primary"
-                            href={data.company.website}
+                            href={data!.company!.website}
                             target="noopener noreferrer"
                           >
-                            {data.company.website}
+                            {data!.company.website}
                           </a>
                         </div>
                       </div>
@@ -191,7 +193,7 @@ const CompanyInfo: React.FC<ICompanyInfoProps> = props => {
               </div>
             ) : (
               <div className="tab-content">
-                {products.nodes.map((product: Product) => {
+                {data!.company.products!.nodes.map((product: Product) => {
                   return (
                     <div className="row" key={product.id}>
                       <div className="col">
@@ -206,9 +208,12 @@ const CompanyInfo: React.FC<ICompanyInfoProps> = props => {
                               <a className="list-item-heading mb-1 truncate w-20 w-xs-100">
                                 {product.name}
                               </a>
-                              <strike className="mb-1 text-muted text-small w-15 w-xs-100">
+                              <span
+                                className="mb-1 text-muted text-small w-15 w-xs-100"
+                                style={{ textDecoration: 'line-through' }}
+                              >
                                 &#8377; {product.mrp}
-                              </strike>
+                              </span>
                               <p className="mb-1 text-muted text-small w-15 w-xs-100">
                                 &#8377; {product.discounted_price}
                               </p>
