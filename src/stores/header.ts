@@ -13,10 +13,7 @@ class HeaderStore {
     this.items.push(item);
   };
 
-  @action setContainerClassnames = (
-    strCurrentClasses: string,
-    selectedMenuHasSubItems: string
-  ) => {
+  @action setContainerClassnames = (strCurrentClasses: string): any => {
     const currentClasses = strCurrentClasses
       ? strCurrentClasses.split(' ').filter(x => x != '')
       : '';
@@ -30,7 +27,7 @@ class HeaderStore {
     }
   };
   @action clickOnMobileMenu = () => {};
-  @action logoutUser = () => {};
+  @action logoutUser = (history: any) => {};
 
   @computed
   get itemCount() {
