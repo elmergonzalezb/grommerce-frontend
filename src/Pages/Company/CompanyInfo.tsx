@@ -161,28 +161,28 @@ const CompanyInfo: React.FC<ICompanyInfoProps> = props => {
                         <div className="mb-4 col-6">
                           <div className="dashboard-small-chart-analytics card">
                             <div className="card-body">
-                              <SmallLineChart {...smallChartData1} />
+                              {/* <SmallLineChart {...smallChartData1} /> */}
                             </div>
                           </div>
                         </div>
                         <div className="mb-4 col-6">
                           <div className="dashboard-small-chart-analytics card">
                             <div className="card-body">
-                              <SmallLineChart {...smallChartData2} />
+                              {/* <SmallLineChart {...smallChartData2} /> */}
                             </div>
                           </div>
                         </div>
                         <div className="mb-4 col-6">
                           <div className="dashboard-small-chart-analytics card">
                             <div className="card-body">
-                              <SmallLineChart {...smallChartData3} />
+                              {/* <SmallLineChart {...smallChartData3} /> */}
                             </div>
                           </div>
                         </div>
                         <div className="mb-4 col-6">
                           <div className="dashboard-small-chart-analytics card">
                             <div className="card-body">
-                              <SmallLineChart {...smallChartData4} />
+                              {/* <SmallLineChart {...smallChartData4} /> */}
                             </div>
                           </div>
                         </div>

@@ -1,5 +1,6 @@
-import React, { Fragment } from 'react';
+import * as React from 'react';
 import ChartComponent, { Chart } from 'react-chartjs-2';
+
 import { addCommas } from 'src/Util/Utils';
 import { ThemeColors } from 'src/Util/ThemeColors';
 
@@ -349,7 +350,7 @@ export class SmallLineChart extends React.Component {
   render() {
     let changeState = this.changeState;
     return (
-      <Fragment>
+      <>
         <div>
           <p className="lead color-theme-1 mb-1 value">
             {this.state.currentValue}
@@ -415,7 +416,7 @@ export class SmallLineChart extends React.Component {
             {...this.props}
           />
         </div>
-      </Fragment>
+      </>
     );
   }
 }

@@ -1,20 +1,21 @@
 import { observable, action, computed } from 'mobx';
+import { createContext } from 'react';
 
 class HeaderStore {
-  @observable items = [];
+  @observable items: Array<string> = [];
   @observable currentClasses = '';
   @observable nextClasses =
     'menu-default menu-sub-hidden main-hidden sub-hidden';
   @observable menuClickCount = 0;
   @observable containerClassnames = '';
   @action
-  addItem = item => {
+  addItem = (item: string) => {
     this.items.push(item);
   };
 
   @action setContainerClassnames = (
-    strCurrentClasses,
-    selectedMenuHasSubItems
+    strCurrentClasses: string,
+    selectedMenuHasSubItems: string
   ) => {
     const currentClasses = strCurrentClasses
       ? strCurrentClasses.split(' ').filter(x => x != '')
@@ -43,6 +44,4 @@ class HeaderStore {
   }
 }
 
-const headerStore = new HeaderStore();
-
-export default headerStore;
+export const HeaderStoreContext = createContext(new HeaderStore());
