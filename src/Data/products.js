@@ -1,6 +1,6 @@
 export const products = [
   {
-    id: 1,
+    id: '1',
     name: 'Marble Cake',
     img: '/assets/img/marble-cake-thumb.jpg',
     category: 'Cakes',
@@ -12,7 +12,7 @@ export const products = [
     stock: 62
   },
   {
-    id: 2,
+    id: '2',
     name: 'Fat Rascal',
     category: 'Cupcakes',
     img: '/assets/img/fat-rascal-thumb.jpg',
@@ -24,7 +24,7 @@ export const products = [
     stock: 48
   },
   {
-    id: 3,
+    id: '3',
     name: 'Chocolate Cake',
     img: '/assets/img/chocolate-cake-thumb.jpg',
     category: 'Cakes',
@@ -36,7 +36,7 @@ export const products = [
     stock: 57
   },
   {
-    id: 4,
+    id: '4',
     name: 'Goose Breast',
     img: '/assets/img/goose-breast-thumb.jpg',
     category: 'Cakes',
@@ -48,7 +48,7 @@ export const products = [
     stock: 41
   },
   {
-    id: 5,
+    id: '5',
     name: 'Petit Gâteau',
     category: 'Cupcakes',
     img: '/assets/img/petit-gateau-thumb.jpg',
@@ -60,7 +60,7 @@ export const products = [
     stock: 23
   },
   {
-    id: 6,
+    id: '6',
     name: 'Salzburger Nockerl',
     img: '/assets/img/salzburger-nockerl-thumb.jpg',
     category: 'Desserts',
@@ -72,7 +72,7 @@ export const products = [
     stock: 34
   },
   {
-    id: 7,
+    id: '7',
     name: 'Napoleonshat',
     img: '/assets/img/napoleonshat-thumb.jpg',
     category: 'Desserts',
@@ -84,7 +84,7 @@ export const products = [
     stock: 31
   },
   {
-    id: 8,
+    id: '8',
     name: 'Cheesecake',
     img: '/assets/img/cheesecake-thumb.jpg',
     category: 'Cakes',
@@ -96,7 +96,7 @@ export const products = [
     stock: 21
   },
   {
-    id: 9,
+    id: '9',
     name: 'Financier',
     img: '/assets/img/financier-thumb.jpg',
     category: 'Cakes',
@@ -109,7 +109,7 @@ export const products = [
     stock: 53
   },
   {
-    id: 10,
+    id: '10',
     name: 'Genoise',
     img: '/assets/img/genoise-thumb.jpg',
     category: 'Cupcakes',
@@ -121,7 +121,7 @@ export const products = [
     stock: 55
   },
   {
-    id: 11,
+    id: '11',
     name: 'Gingerbread',
     img: '/assets/img/gingerbread-thumb.jpg',
     category: 'Cakes',
@@ -133,7 +133,7 @@ export const products = [
     stock: 12
   },
   {
-    id: 12,
+    id: '12',
     name: 'Magdalena',
     img: '/assets/img/magdalena-thumb.jpg',
     category: 'Cakes',
@@ -145,7 +145,7 @@ export const products = [
     stock: 14
   },
   {
-    id: 13,
+    id: '13',
     name: 'Parkin',
     img: '/assets/img/parkin-thumb.jpg',
     category: 'Cakes',
@@ -158,7 +158,7 @@ export const products = [
     stock: 78
   },
   {
-    id: 14,
+    id: '14',
     name: 'Streuselkuchen',
     img: '/assets/img/streuselkuchen-thumb.jpg',
     category: 'Cakes',
@@ -170,7 +170,7 @@ export const products = [
     stock: 55
   },
   {
-    id: 15,
+    id: '15',
     name: 'Tea loaf',
     img: '/assets/img/tea-loaf-thumb.jpg',
     category: 'Cakes',
@@ -182,7 +182,7 @@ export const products = [
     stock: 20
   },
   {
-    id: 16,
+    id: '16',
     name: 'Merveilleux',
     img: '/assets/img/merveilleux-thumb.jpg',
     category: 'Cakes',
@@ -194,7 +194,7 @@ export const products = [
     stock: 6
   },
   {
-    id: 17,
+    id: '17',
     name: 'Fruitcake',
     img: '/assets/img/fruitcake-thumb.jpg',
     category: 'Cakes',
@@ -206,7 +206,7 @@ export const products = [
     stock: 17
   },
   {
-    id: 18,
+    id: '18',
     name: 'Bebinca',
     img: '/assets/img/bebinca-thumb.jpg',
     category: 'Cakes',
@@ -218,7 +218,7 @@ export const products = [
     stock: 16
   },
   {
-    id: 19,
+    id: '19',
     name: 'Cremeschnitte',
     img: '/assets/img/cremeschnitte-thumb.jpg',
     category: 'Desserts',
@@ -230,7 +230,7 @@ export const products = [
     stock: 9
   },
   {
-    id: 20,
+    id: '20',
     name: 'Soufflé',
     img: '/assets/img/souffle-thumb.jpg',
     category: 'Cupcakes',

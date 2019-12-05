@@ -5,7 +5,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 
 // Components
 import Header from './components/Header';
-import Sidebar from './components/Sidebar';
+import { Sidebar } from './components/Sidebar';
 
 // Pages
 import Dashboard from './Pages/Dashboard/Dashboard';
