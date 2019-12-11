@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import * as React from 'react';
 import ReactSiema from './lib';
 
 export default class ReactSiemaCarousel extends React.Component {
@@ -94,7 +94,7 @@ export default class ReactSiemaCarousel extends React.Component {
 
   render() {
     return (
-      <Fragment>
+      <React.Fragment>
         <ReactSiema
           ref="slider"
           onResize={perPage => {
@@ -124,7 +124,7 @@ export default class ReactSiemaCarousel extends React.Component {
             </button>
           </div>
         )}
-      </Fragment>
+      </React.Fragment>
     );
   }
 }

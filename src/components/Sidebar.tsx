@@ -22,28 +22,26 @@ const sidebarItems = [
   }
 ];
 
-export const Sidebar: React.FC = () => {
+const Sidebar: React.FC = () => {
   return (
     <div className="sidebar">
       <div className="main-menu">
         <div className="scroll">
-          <PerfectScrollbar
-            options={{ suppressScrollX: true, wheelPropagation: false }}
-          >
-            <Nav vertical className="list-unstyled">
-              {sidebarItems.map((item, i) => {
-                return (
-                  <NavItem key={i}>
-                    <Link to={item.link}>
-                      <i className={item.icon} /> <span>{item.title}</span>
-                    </Link>
-                  </NavItem>
-                );
-              })}
-            </Nav>
-          </PerfectScrollbar>
+          <Nav vertical className="list-unstyled">
+            {sidebarItems.map((item, i) => {
+              return (
+                <NavItem key={i}>
+                  <Link to={item.link}>
+                    <i className={item.icon} /> <span>{item.title}</span>
+                  </Link>
+                </NavItem>
+              );
+            })}
+          </Nav>
         </div>
       </div>
     </div>
   );
 };
+
+export default Sidebar;

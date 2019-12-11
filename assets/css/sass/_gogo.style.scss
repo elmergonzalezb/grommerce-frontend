@@ -2824,7 +2824,8 @@ main {
 }
 
 .dashboard-list-with-thumbs {
-  height: 500px;
+  max-height: 280px;
+  overflow: auto;
 }
 
 .dashboard-logs {

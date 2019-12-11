@@ -5,7 +5,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 
 // Components
 import Header from './components/Header';
-import { Sidebar } from './components/Sidebar';
+import Sidebar from './components/Sidebar';
 
 // Pages
 import Dashboard from './Pages/Dashboard/Dashboard';
@@ -17,7 +17,7 @@ import AllCompanies from './Pages/Company/AllCompanies';
 import CompanyInfo from './Pages/Company/CompanyInfo';
 import { HeaderStoreContext } from './stores/header';
 
-const MainApp: React.FC = observer(() => {
+export const MainApp: React.FC = observer(() => {
   const headerStore = React.useContext(HeaderStoreContext);
   return (
     <div id="app-container" className={headerStore.nextClasses}>
@@ -40,5 +40,3 @@ const MainApp: React.FC = observer(() => {
     </div>
   );
 });
-
-export default MainApp;

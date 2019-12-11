@@ -1,19 +1,6 @@
 import * as React from 'react';
 import { inject, observer } from 'mobx-react';
-import {
-  Row,
-  Card,
-  CardBody,
-  Form,
-  FormGroup,
-  Label,
-  Input,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  Badge
-} from 'reactstrap';
+import { Row, Card, CardBody, Badge } from 'reactstrap';
 import { Colxx } from '../../components/CustomBootstrap';
 import ReactSiema from '../../components/ReactSiema/ReactSiemaCarousel';
 import { Link } from 'react-router-dom';
@@ -27,9 +14,9 @@ import { products } from '../../Data/products';
 import { routes } from '../../config/routes';
 import { HeaderStoreContext } from 'src/stores/header';
 
-export const Dashboard: React.FC = observer(() => {
+const Dashboard: React.FC = observer(() => {
   const headerStore = React.useContext(HeaderStoreContext);
-
+  console.log('Dashboard');
   return (
     <div className="dashboard-wrapper">
       <Row>
@@ -44,52 +31,7 @@ export const Dashboard: React.FC = observer(() => {
               }}
               controls={false}
               loop={false}
-            >
-              <div className="icon-row-item mb-4">
-                <Card>
-                  <CardBody className="text-center">
-                    <i className="iconsminds-clock" />
-                    <p className="card-text font-weight-semibold mb-0">
-                      Pending Orders
-                    </p>
-                    <p className="lead text-center">14</p>
-                  </CardBody>
-                </Card>
-              </div>
-              <div className="icon-row-item mb-4">
-                <Card>
-                  <CardBody className="text-center">
-                    <i className="iconsminds-basket-coins" />
-                    <p className="card-text font-weight-semibold mb-0">
-                      Completed Orders
-                    </p>
-                    <p className="lead text-center">32</p>
-                  </CardBody>
-                </Card>
-              </div>
-              <div className="icon-row-item mb-4">
-                <Card>
-                  <CardBody className="text-center">
-                    <i className="iconsminds-arrow-refresh" />
-                    <p className="card-text font-weight-semibold mb-0">
-                      Refund Requests
-                    </p>
-                    <p className="lead text-center">14</p>
-                  </CardBody>
-                </Card>
-              </div>
-              <div className="icon-row-item mb-4">
-                <Card>
-                  <CardBody className="text-center">
-                    <i className="iconsminds-mail-read" />
-                    <p className="card-text font-weight-semibold mb-0">
-                      New Comments
-                    </p>
-                    <p className="lead text-center">25</p>
-                  </CardBody>
-                </Card>
-              </div>
-            </ReactSiema>
+            ></ReactSiema>
           </div>
           <div className="card">
             <div className="card-body">
@@ -105,45 +47,43 @@ export const Dashboard: React.FC = observer(() => {
             <div className="card-body">
               <h5 className="card-title">Recent Orders</h5>
               <div className="scroll dashboard-list-with-thumbs">
-                <PerfectScrollbar>
-                  {products.map((product, index) => {
-                    return (
-                      <div className="d-flex mb-3">
+                {products.map((product, index) => {
+                  return (
+                    <div className="d-flex mb-3">
+                      <Link
+                        className="position-relative"
+                        to={routes.productInfo.replace(':id', product.id)}
+                      >
+                        <img
+                          src={`https://gogo-react.coloredstrategies.com/${product.img}`}
+                          alt={product.name}
+                          className="list-thumbnail"
+                        />
+                        <Badge
+                          pill
+                          className="position-absolute badge-top-right"
+                        >
+                          {product.status}
+                        </Badge>
+                      </Link>
+                      <div className="pl-3 pr-2 pt-2 pb-2">
                         <Link
-                          className="position-relative"
                           to={routes.productInfo.replace(':id', product.id)}
                         >
-                          <img
-                            src={`https://gogo-react.coloredstrategies.com/${product.img}`}
-                            alt={product.name}
-                            className="list-thumbnail"
-                          />
-                          <Badge
-                            pill
-                            className="position-absolute badge-top-right"
-                          >
-                            {product.status}
-                          </Badge>
+                          <p className="list-item-heading">{product.name}</p>
+                          <div className="pr-4">
+                            <p className="text-muted text-small">
+                              {product.description}
+                            </p>
+                          </div>
+                          <div className="text-primary text-small font-weight-medium d-none d-sm-block">
+                            {product.createDate}
+                          </div>
                         </Link>
-                        <div className="pl-3 pr-2 pt-2 pb-2">
-                          <Link
-                            to={routes.productInfo.replace(':id', product.id)}
-                          >
-                            <p className="list-item-heading">{product.name}</p>
-                            <div className="pr-4">
-                              <p className="text-muted text-small">
-                                {product.description}
-                              </p>
-                            </div>
-                            <div className="text-primary text-small font-weight-medium d-none d-sm-block">
-                              {product.createDate}
-                            </div>
-                          </Link>
-                        </div>
                       </div>
-                    );
-                  })}
-                </PerfectScrollbar>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -152,3 +92,5 @@ export const Dashboard: React.FC = observer(() => {
     </div>
   );
 });
+
+export default Dashboard;
