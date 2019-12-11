@@ -9,8 +9,8 @@ import Sidebar from './components/Sidebar';
 
 // Pages
 import Dashboard from './Pages/Dashboard/Dashboard';
-import AllProducts from './Pages/Product/AllProducts';
 import ProductInfo from './Pages/Product/ProductInfo';
+import { AllProducts } from './Pages/Product/AllProducts';
 
 import { routes } from './config/routes';
 import AllCompanies from './Pages/Company/AllCompanies';

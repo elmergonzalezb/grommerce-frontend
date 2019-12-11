@@ -51,7 +51,6 @@ interface Product {
 }
 
 const CompanyInfo: React.FC<ICompanyInfoProps> = props => {
-  console.log('props', props.match);
   const [activeTab, setActiveTab] = React.useState('details');
   const { id } = props.match.params;
 

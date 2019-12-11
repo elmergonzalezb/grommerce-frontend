@@ -16,7 +16,6 @@ import { HeaderStoreContext } from 'src/stores/header';
 
 const Dashboard: React.FC = observer(() => {
   const headerStore = React.useContext(HeaderStoreContext);
-  console.log('Dashboard');
   return (
     <div className="dashboard-wrapper">
       <Row>

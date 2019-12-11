@@ -1,11 +1,12 @@
-import { observable, action, computed, set, get } from 'mobx';
+import { observable, action } from 'mobx';
 import { products } from '../Data/products';
+import { createContext } from 'react';
 
 class Products {
   @observable allProducts = products;
   @observable searchedProducts = products;
 
-  @action searchItems(search) {
+  @action searchItems(search: string) {
     this.searchedProducts = products.filter(product => {
       const searchItem = search.toLowerCase();
       const productName = product.name.toLowerCase();
@@ -20,4 +21,4 @@ class Products {
 
 const productsStore = new Products();
 
-export default productsStore;
+export const ProductStoreContext = createContext(productsStore);
