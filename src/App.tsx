@@ -5,7 +5,8 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  Redirect
+  Redirect,
+  withRouter
 } from 'react-router-dom';
 
 // Components
@@ -72,4 +73,4 @@ const App: React.FC = observer(() => {
   );
 });
 
-export default hot(App);
+export default withRouter(hot(App));

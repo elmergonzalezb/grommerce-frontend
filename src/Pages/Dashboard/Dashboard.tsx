@@ -21,7 +21,7 @@ const Dashboard: React.FC = observer(() => {
       <Row>
         <Colxx lg="12" xl="6">
           <div className="icon-cards-row">
-            <ReactSiema
+            {/* <ReactSiema
               perPage={{
                 0: 1,
                 320: 2,
@@ -30,13 +30,13 @@ const Dashboard: React.FC = observer(() => {
               }}
               controls={false}
               loop={false}
-            ></ReactSiema>
+            ></ReactSiema> */}
           </div>
           <div className="card">
             <div className="card-body">
               <h5 className="card-title">Sales</h5>
               <div className="dashboard-line-chart">
-                <LineShadow {...lineChartConfig} />
+                {/* <LineShadow {...lineChartConfig} /> */}
               </div>
             </div>
           </div>
