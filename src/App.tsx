@@ -6,7 +6,8 @@ import {
   Route,
   Switch,
   Redirect,
-  withRouter
+  withRouter,
+  RouteComponentProps
 } from 'react-router-dom';
 
 // Components
@@ -17,10 +18,12 @@ import Sidebar from './components/Sidebar';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import ProductInfo from './Pages/Product/ProductInfo';
 import { AllProducts } from './Pages/Product/AllProducts';
-
-import { routes } from './config/routes';
 import AllCompanies from './Pages/Company/AllCompanies';
 import CompanyInfo from './Pages/Company/CompanyInfo';
+import Login from './Pages/Authentication/Login';
+
+import { routes } from './config/routes';
+
 import { HeaderStoreContext } from './stores/header';
 
 import '../assets/css/vendor/bootstrap.min.css';
@@ -29,12 +32,17 @@ import '../assets/fonts/simple-line-icons/css/simple-line-icons.css';
 import '../assets/fonts/iconsmind-s/css/iconsminds.css';
 import { hot } from 'react-hot-loader/root';
 
-const App: React.FC = observer(() => {
+const App: React.FC = observer((routeProps: any) => {
   const headerStore = React.useContext(HeaderStoreContext);
+  const { pathname } = routeProps.location;
   return (
     <div id="app-container" className={headerStore.nextClasses}>
-      <Header />
-      <Sidebar />
+      {pathname !== '/login' ? (
+        <>
+          <Header />
+          <Sidebar />
+        </>
+      ) : null}
       <main>
         <div className="container-fluid">
           <Switch>
@@ -59,11 +67,13 @@ const App: React.FC = observer(() => {
               path={routes.productInfo}
               component={() => <ProductInfo />}
             />
-            <Route
+            {/* <Route
               exact
               path={routes.companyInfo}
               component={(props: any) => <CompanyInfo {...props} />}
-            />
+            /> */}
+
+            <Route exact path={routes.login} component={() => <Login />} />
 
             <Redirect to={routes.index} />
           </Switch>
