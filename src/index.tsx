@@ -3,9 +3,10 @@ import * as ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
+import { Provider } from 'mobx-react';
 
 const client = new ApolloClient({
-  uri: 'http://localhost:3000/graphql'
+  uri: 'http://localhost:4000/graphql'
 });
 
 import App from './App';
@@ -13,7 +14,9 @@ import App from './App';
 ReactDOM.render(
   <ApolloProvider client={client}>
     <BrowserRouter>
-      <App />
+      <Provider>
+        <App />
+      </Provider>
     </BrowserRouter>
   </ApolloProvider>,
   document.getElementById('root')
