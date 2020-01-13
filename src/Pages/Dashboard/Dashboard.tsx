@@ -48,7 +48,7 @@ const Dashboard: React.FC = observer(() => {
               <div className="scroll dashboard-list-with-thumbs">
                 {products.map((product, index) => {
                   return (
-                    <div className="d-flex mb-3">
+                    <div className="d-flex mb-3" key={index}>
                       <Link
                         className="position-relative"
                         to={routes.productInfo.replace(':id', product.id)}

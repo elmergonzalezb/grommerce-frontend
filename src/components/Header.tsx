@@ -50,7 +50,7 @@ const Header: React.FC = observer(() => {
 
       <div className="ml-auto">
         <div className="header-icons d-inline-block align-middle">
-          <div className="position-relative d-inline-block">
+          <div className="position-relative d-flex justify-content-between">
             <UncontrolledDropdown className="dropdown-menu-right">
               <DropdownToggle
                 className="header-icon notificationButton"
@@ -65,45 +65,39 @@ const Header: React.FC = observer(() => {
                 className="position-absolute mt-3 scroll"
                 right
                 id="notificationDropdown"
-              />
+              >
+                <p className="text-center text-muted">Nothing to show</p>
+              </DropdownMenu>
             </UncontrolledDropdown>
           </div>
         </div>
         <div className="user d-inline-block">
           <UncontrolledDropdown className="dropdown-menu-right">
             <DropdownToggle className="p-0" color="empty">
-              <span className="mr-1">
-                {/* {user.firstName} {user.lastName} */}
-              </span>
+              <span className="mr-1 name">Bradley Cooper</span>
               <span>
-                {/* <img
-                    alt="Profile"
-                    src={profilePic}
-                    style={{ backgroundColor: this.state.bgHEX }}
-                  /> */}
+                <img
+                  src="https://www.biography.com/.image/t_share/MTE1ODA0OTcxNTEyODU4MTI1/bradley-cooper-547062-1-402.jpg"
+                  alt="Profile Picture"
+                  height="40"
+                  className="rounded ml-3"
+                />
               </span>
             </DropdownToggle>
-            {/* <DropdownMenu className="mt-3" right>
-                {this.props.dropDownItems.map((item, i) => {
-                  if (item.type === 'link') {
-                    return (
-                      <Link to={item.to}>
-                        <DropdownItem>
-                          <i className={item.icon} /> {item.text}
-                        </DropdownItem>
-                      </Link>
-                    );
-                  } else if (item.type === 'divider') {
-                    return <DropdownItem divider />;
-                  } else if (item.type === 'logout') {
-                    return (
-                      <DropdownItem onClick={() => this.handleLogout()}>
-                        <i className="simple-icon-power mr-2" /> Sign out
-                      </DropdownItem>
-                    );
-                  }
-                })}
-              </DropdownMenu> */}
+            <DropdownMenu className="position-absolute mt-3 scroll" right>
+              <li className="p-2">
+                <Link to="/profile">
+                  <i className="simple-icon-user"></i>
+                  <span className="ml-2">Profile</span>
+                </Link>
+              </li>
+              <li className="p-2">
+                <Link to="/settings">
+                  <i className="simple-icon-settings"></i>
+                  <span className="ml-2">Settings</span>
+                </Link>
+              </li>
+            </DropdownMenu>
           </UncontrolledDropdown>
         </div>
       </div>
